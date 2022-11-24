@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Insert title here</title>
+  </head>
+  <body>
+    <form th:action="@{/result-forecast}" method="post">
+      <select id="select-pref" name="prefID">
+        <option value="">都道府県を選択してください</option>
+      </select>
+      <select id="select-city" name="city">
+        <option value="">市区町村を選択してください</option>
+      </select>
+      <button>検索</button>
+    </form>
+    <div th:if="${weather} != null">
+      <h2>
+        <div th:text="${weather.cityName}"></div>
+      </h2>
+      天気 :
+      <span th:text="${weather.description}"></span><br />
+      平均気温 :
+      <span th:text="${weather.temp}"></span>℃<br />
+      最高気温 :
+      <span th:text="${weather.tempMax}"></span>℃<br />
+      最低気温 :
+      <span th:text="${weather.tempMin}"></span>℃<br />
+      湿度 :
+      <span th:text="${weather.humidity}"></span>%<br />
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="/js/japan.js"></script>
+  </body>
+</html>
