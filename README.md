@@ -1,1 +1,3 @@
 # open-weather
+OpenWeatherMap apiを使用して都市名から天気予報を取得するWebアプリケーションです。
+OpenWeatherMap apiの既知である都市名のみ検索可能なため、たまに500エラーが返ってきます。
